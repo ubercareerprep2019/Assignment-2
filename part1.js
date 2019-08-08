@@ -9,10 +9,10 @@ function PrintInOrder(Root)
     if (TreeNode === None)
     {
       return([]);
-    };
+    }
     else
     {
       return( PrintHelper(TreeNode.left) + [TreeNode.data] + PrintHelper(TreeNode.right) );
-    };
-   };
-};
+    }
+   }
+}
