@@ -1,7 +1,11 @@
+import Queue from Queue;
+
+
+//Ex2 DFS
+
+
 //Ex3 BFS
 
-
-import Queue from Queue;
 
 function bfs(graph, root) {
   var nodesLen = {};
