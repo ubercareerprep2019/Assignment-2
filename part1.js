@@ -36,6 +36,19 @@ else {
 
 
 //PART 1 - TREES - Ex2
+class Employee{
+  constructor(name, title, reportsTo)
+  {
+   self.name = name
+   self.title = title
+   self.reportsTo = []
+  }
+}
+
+class OrganizationStructure {
+  constructor(CEO){
+    self.CEO = CEO
+  }
 
 
 levelOrder() {
