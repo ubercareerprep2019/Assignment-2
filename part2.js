@@ -1,3 +1,6 @@
+//Ex 4
+
+
 class Node {
   constructor(data, left = null, right = null){
     this.data = data;
@@ -93,7 +96,7 @@ class BST {
 
 
 
-
+//PART 1 - Ex1
 inOrder(){
 if (this.root === null){
     return null;
@@ -110,6 +113,10 @@ else {
 }
 }
 
+  
+  
+  
+//PART 1 - Ex3 (Would also work as a PrintNumLevels() for the class Organization Structure   
 findMaxHeight(node = this.root){
   if (node == null){
     return 0;
