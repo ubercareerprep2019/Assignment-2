@@ -74,6 +74,34 @@ class OrganizationStructure {
       this.level += 1
       this.printLevelByLevelHelper(nextLevel)
   }
+  
+  
+    printNumLevels(){
+    if(this.level > 0){
+      print(this.level)
+    }
+    else{
+      start = this.CEO
+      this.level += 1
+      this.printNumLevelsHelper(start.reportsTo)
+      console.log(this.level)
+    }
+  }
+
+  
+//PART 1 - TREES - Ex3
+  printNumLevelsHelper(reportsTo){
+    if(reportsTo.length === 0){
+      return
+    }
+
+    nextLevel = []
+    for(i = 0; i < reportsTo.length; i++){
+        nextLevel.push(reportsTo[i])
+    }
+    this.level += 1
+    this.printLevelByLevelHelper(nextLevel)
+  }
 
 
 }
