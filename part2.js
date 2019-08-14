@@ -93,47 +93,4 @@ class BST {
     }
   }
 
-
-
-
-//PART 1 - Ex1
-inOrder(){
-if (this.root === null){
-    return null;
-}
-else {
-  var result = new Array();
-  function traverseInOrder(node){
-    node.left && traverseInOrder(node.left);
-    result.push(node.data);
-    node.right && traverseInOrder(node.right);
-  }
-  traverseInOrder(this.root);
-  return result;
-}
-}
-
-  
-  
-  
-//PART 1 - Ex3 (Would also work as a PrintNumLevels() for the class Organization Structure   
-findMaxHeight(node = this.root){
-  if (node == null){
-    return 0;
-  }
-  let left = this.findMaxHeight(node.left);
-  let right = this.findMaxHeight(node.right);
-  if (left > right)
-  {
-     return left + 1;
-  }
-  else {
-    return right + 1;
-  }
-  
-}
-
-
-
-
 }
