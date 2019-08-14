@@ -39,35 +39,44 @@ else {
 class Employee{
   constructor(name, title, reportsTo)
   {
-   self.name = name
-   self.title = title
-   self.reportsTo = []
+   this.name = name;
+   this.title = title;
+   this.reportsTo = []
   }
 }
 
 class OrganizationStructure {
   constructor(CEO){
-    self.CEO = CEO
+    this.CEO = CEO;
+    this.level = 0;
+  }
+
+  
+   printLevelByLevel()
+   {
+     start = this.CEO
+     if(this.level === 0){
+       this.level += 1
+     }
+     this.printLevelByLevelHelper(start.reportsTo)
+   }
+
+  printLevelByLevelHelper(reportsTo){
+      if(reportsTo.length === 0){
+        return 
+      }
+
+      nextLevel = []
+      for(i = 0; i < reportsTo.length; i++){
+        nextLevel.push(reportsTo[i])
+      }
+      
+      this.level += 1
+      this.printLevelByLevelHelper(nextLevel)
   }
 
 
-levelOrder() {
-      let result = [];
-      let Q = []; 
-      if (this.root != null) {
-          Q.push(this.root);
-          while(Q.length > 0) {
-              let node = Q.shift();
-              result.push(node.data);
-              if (node.left != null) {
-                  Q.push(node.left);
-              };
-              if (node.right != null) {
-                  Q.push(node.right);
-              };
-          };
-          return result;
-      } else {
-          return null;
-      };
-  };
+}
+
+
+
