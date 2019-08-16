@@ -1,4 +1,4 @@
-//Ex 4
+//PART 2 - TREES - Ex4
 
 
 class Node {
@@ -93,4 +93,44 @@ class BST {
     }
   }
 
+}
+
+
+
+//PART 2 - TREES - Ex5
+
+//Array Implementation
+
+class EntryNode {
+   constructor(number, name){
+    this.number = number;
+    this.name = name
+  }
+
+}
+
+class ArrayPhoneBook {
+  
+  
+  constructor(){
+    this.entries = []
+  }
+
+
+  insert(EntryNode){
+    this.entries.push(EntryNode)
+  }
+  
+  size(){
+    return this.entries.length 
+  }
+
+  find(name){
+    for(EntryIndex = 0; EntryIndex < this.entries.length ; EntryIndex++){
+       if(this.entries[EntryIndex].name === name){
+         return this.entries[EntryIndex].number
+       }
+    return -1
+    };
+  };
 }
