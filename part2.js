@@ -194,7 +194,7 @@ class BST {
   
 
 
-
+//need to finish find
  find(name){
     let current = this.root;
     while (current.name !== name){
