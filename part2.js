@@ -137,3 +137,79 @@ class ArrayPhoneBook {
 
 
 //BST Implementation
+class EntryNode {
+  constructor(number, name, left = null, right = null){
+    this.number = number;
+    this.name = name;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+
+class BST {
+
+
+
+  constructor() {
+    this.root = null;
+  }
+
+
+
+  add(Entry){
+    const node = this.root
+    if (node === null){
+      this.root = new EntryNode(Entry.number, Entry.name);
+    }
+    else{
+      const searchTree = function(node){
+         if (Entry.number < node.number){
+           if(node.left === null){
+             node.left = new EntryNode(Entry.number, Entry.name);
+             return;
+           }
+           else if(node.left !== null){
+             return searchTree(node.left);
+  
+           }
+         }
+          else if(Entry.number > node.number){
+            if(node.right === null){
+              node.right = new EntryNode(Entry.number, Entry.name);
+              return;
+            }
+            else if(node.right !== null){
+              return searchTree(node.right);
+            }
+           else {
+             return null;
+           }
+
+        }
+      }
+    }
+  return searchTree(node);
+  }
+  
+
+
+
+ find(name){
+    let current = this.root;
+    while (current.name !== name){
+        if (data < current.data){
+          current = current.left;
+        }
+        else {
+          current = current.right;
+        }
+        if (current === null){
+          return null;
+        }
+    }
+  }
+
+
+
+}
